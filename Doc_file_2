@@ -1,0 +1,8 @@
+FROM ubuntu
+MAINTAINER naveen
+
+RUN apt-get update && apt-get install vim apache2 -y
+WORKDIR /var/www/app
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+EXPOSE 80
